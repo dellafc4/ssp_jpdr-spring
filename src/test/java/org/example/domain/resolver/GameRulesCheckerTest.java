@@ -1,15 +1,28 @@
 package org.example.domain.resolver;
 
+import org.apache.tomcat.util.digester.Rules;
 import org.example.domain.model.MoveOption;
+import org.example.domain.rule.PaperScissorsRule;
+import org.example.domain.rule.RockPaperRule;
+import org.example.domain.rule.RockScissorRule;
+import org.example.domain.rule.Rule;
 import org.junit.jupiter.api.Test;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 class GameRulesCheckerTest {
 
-    MoveResolver gameRulesChecker = new MoveResolver();
+    List<Rule> rules = new ArrayList<>(Arrays.asList(
+            new PaperScissorsRule(),
+            new RockScissorRule(),
+            new RockPaperRule())
+    );
+    MoveResolver gameRulesChecker = new MoveResolver(rules);
     @Test
     void assertRulesWorkingAsExpecte() {
         Optional<MoveOption> moveOption = gameRulesChecker.resolveWinningMove(MoveOption.ROCK, MoveOption.SCISSORS);

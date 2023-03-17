@@ -1,46 +1,29 @@
 package org.example.domain.resolver;
 
 import org.example.domain.model.MoveOption;
+import org.example.domain.rule.Rule;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
 
 @Service
 public class MoveResolver {
 
+    private final List<Rule> rules;
+
+    public MoveResolver(List<Rule> rules) {
+        this.rules = rules;
+    }
+
     public Optional<MoveOption> resolveWinningMove(MoveOption player1moveOption, MoveOption palyer2MoveOption) {
 
-        if (player1moveOption.equals(palyer2MoveOption)) {
-            return Optional.empty();
+        for (Rule rule: rules) {
+            if (rule.isApplicableRule(player1moveOption, palyer2MoveOption)){
+                return Optional.of(rule.getWinningMove());
+            }
         }
 
-        if (isRockPaperRule(player1moveOption, palyer2MoveOption)) {
-            return Optional.of(MoveOption.PAPER);
-        }
-
-        if (isRockScissorRule(player1moveOption, palyer2MoveOption)) {
-            return Optional.of(MoveOption.ROCK);
-        }
-
-        return Optional.of(MoveOption.SCISSORS);
+        return Optional.empty();
     }
-
-    private boolean isRockPaperRule(MoveOption player1moveOption, MoveOption palyer2MoveOption) {
-        if (MoveOption.PAPER.equals(player1moveOption) && MoveOption.ROCK.equals(palyer2MoveOption)) {
-            return true;
-        }
-
-        return MoveOption.PAPER.equals(palyer2MoveOption) && MoveOption.ROCK.equals(player1moveOption);
-    }
-
-    private boolean isRockScissorRule(MoveOption player1moveOption, MoveOption palyer2MoveOption) {
-        if (MoveOption.SCISSORS.equals(player1moveOption) && MoveOption.ROCK.equals(palyer2MoveOption)) {
-            return true;
-        }
-
-        return MoveOption.SCISSORS.equals(palyer2MoveOption) && MoveOption.ROCK.equals(player1moveOption);
-    }
-
-
-
 }

@@ -1,6 +1,6 @@
 package org.example.domain.model;
 
-public enum GameEndOption {
+public enum GameOutcomeValue {
     PLAYER_WINS,
     ENEMY_WINS,
     TIE
