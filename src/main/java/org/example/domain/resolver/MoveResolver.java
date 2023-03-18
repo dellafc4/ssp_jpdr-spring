@@ -26,4 +26,8 @@ public class MoveResolver {
 
         throw new RuntimeException("No game rule found with given player moves: " + player1moveOption + " - " + palyer2MoveOption);
     }
+
+    public MoveOption resolveEnemyMove() {
+        return MoveOption.randomMoveOption();
+    }
 }

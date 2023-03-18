@@ -16,8 +16,7 @@ public class GameResolver {
 
     public GameResultData resolveResult(MoveOption playerMove) {
 
-        MoveOption enemyMove = MoveOption.randomMoveOption();
-
+        MoveOption enemyMove = moveResolver.resolveEnemyMove();
         Optional<MoveOption> winnerMove = moveResolver.resolveWinningMove(playerMove, enemyMove);
 
         if (winnerMove.isEmpty()) {
