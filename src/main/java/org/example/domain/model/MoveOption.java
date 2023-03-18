@@ -13,5 +13,4 @@ public enum MoveOption {
     public static MoveOption randomMoveOption() {
         return moveOptions[random.nextInt(MoveOption.moveOptions.length)];
     }
-
 }

@@ -27,7 +27,6 @@ public class GameResolver {
         return playerMove.equals(winnerMove.get()) ? createGameResultData(GameOutcomeValue.PLAYER_WINS, enemyMove) : createGameResultData(GameOutcomeValue.ENEMY_WINS, enemyMove);
     }
 
-    //TODO: refactor
     private GameResultData createGameResultData(GameOutcomeValue gameOutcomeOption, MoveOption moveOption) {
         return new GameResultData(gameOutcomeOption, moveOption);
     }

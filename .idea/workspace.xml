@@ -5,11 +5,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="357774a2-0a5f-4b19-a6e2-869abf8fee4d" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/application/exception/RequestValidationException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/application/handler/ControllerExceptionHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/application/validator/RequestValidator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/domain/rule/TieRule.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/domain/model/GameEndOption.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/domain/model/GameOutcomeValue.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/domain/model/GameResultData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/domain/model/GameResultData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/application/EndGameRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/application/GameResultRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/application/GameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/application/GameController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/domain/handler/EndGameHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/domain/handler/GameResultHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/domain/model/MoveOption.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/domain/model/MoveOption.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/domain/resolver/GameResolver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/domain/resolver/GameResolver.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/domain/resolver/MoveResolver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/domain/resolver/MoveResolver.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/domain/rule/PaperScissorsRule.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/domain/rule/PaperScissorsRule.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/domain/rule/RockPaperRule.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/domain/rule/RockPaperRule.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/domain/rule/RockScissorRule.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/domain/rule/RockScissorRule.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/domain/rule/Rule.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/domain/rule/Rule.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/org/example/domain/resolver/GameRulesCheckerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/example/domain/resolver/GameRulesCheckerTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -69,6 +79,29 @@
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
+    </configuration>
+    <configuration name="GameRulesCheckerTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;org.example.domain.resolver.GameRulesCheckerTest&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
     </configuration>
     <configuration name="GameRulesCheckerTest.assertRockWinsAgainstScissers" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
@@ -164,6 +197,7 @@
     </configuration>
     <list>
       <item itemvalue="Application.RockPaperScisser" />
+      <item itemvalue="Gradle.GameRulesCheckerTest" />
       <item itemvalue="Gradle.GameRulesCheckerTest.assertRockWinsAgainstScissers" />
       <item itemvalue="Gradle.GameRulesCheckerTest.assertRulesWorkingAsExpecte" />
       <item itemvalue="Gradle.GameRulesCheckerTest.assertRulesWorkingAsExpecte (1)" />
@@ -172,6 +206,7 @@
     <recent_temporary>
       <list>
         <item itemvalue="Gradle.GameRulesCheckerTest.assertRulesWorkingAsExpecte (1)" />
+        <item itemvalue="Gradle.GameRulesCheckerTest" />
         <item itemvalue="Gradle.GameRulesCheckerTest.assertRulesWorkingAsExpecte" />
         <item itemvalue="Gradle.GameRulesCheckerTest.assertRulesWorkingAsExpectedWithRockOption" />
         <item itemvalue="Gradle.GameRulesCheckerTest.assertRockWinsAgainstScissers" />
@@ -193,9 +228,14 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/example/domain/resolver/MoveResolver.java</url>
-          <line>28</line>
-          <option name="timeStamp" value="2" />
+          <url>file://$PROJECT_DIR$/src/main/java/org/example/application/GameController.java</url>
+          <line>38</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/example/application/handler/ControllerExceptionHandler.java</url>
+          <line>14</line>
+          <option name="timeStamp" value="5" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

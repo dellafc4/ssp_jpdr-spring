@@ -19,11 +19,11 @@ public class MoveResolver {
     public Optional<MoveOption> resolveWinningMove(MoveOption player1moveOption, MoveOption palyer2MoveOption) {
 
         for (Rule rule: rules) {
-            if (rule.isApplicableRule(player1moveOption, palyer2MoveOption)){
-                return Optional.of(rule.getWinningMove());
+            if (rule.isApplicable(player1moveOption, palyer2MoveOption)){
+                return rule.getWinningMove();
             }
         }
 
-        return Optional.empty();
+        throw new RuntimeException("No game rule found with given player moves: " + player1moveOption + " - " + palyer2MoveOption);
     }
 }
